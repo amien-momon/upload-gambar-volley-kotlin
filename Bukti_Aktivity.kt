@@ -47,7 +47,7 @@ class Bukti_Activity : AppCompatActivity() {
         et_username = findViewById(R.id.username)
 
 
-        //botton upload
+        //button upload
         upload.setOnClickListener{
                 upload()
         }
