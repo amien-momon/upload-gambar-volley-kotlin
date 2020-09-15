@@ -28,6 +28,8 @@ class Bukti_Activity : AppCompatActivity() {
     lateinit var file : Button
     lateinit var upload : Button
     var bitmap: Bitmap? = null
+    lateinit var UPLOAD_URL : String = "http://localhost/file/Bukti.php"
+    
 
 
 
@@ -58,7 +60,7 @@ class Bukti_Activity : AppCompatActivity() {
     }
     
     
-    //membuka gallery dan memilih gambar
+    //membuka gallery dan menggambil gambar
     private fun launchGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
@@ -94,7 +96,7 @@ class Bukti_Activity : AppCompatActivity() {
 
         val stringRequest = object : StringRequest(
             Request.Method.POST,
-                Constants.UPLOAD_URL,
+                UPLOAD_URL,
                 Response.Listener<String> { response ->
                     try {
                         val obj = JSONObject(response)
